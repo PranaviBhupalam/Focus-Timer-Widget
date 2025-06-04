@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=463, initial-scale=1.0"/>
+  <title>Timer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="widget">
+    <!-- Title at top left -->
+    <h1 class="title">focus timer &lt;3</h1>
+    
+    <!-- Paint background - INSERT paint_bg.png HERE -->
+    <img src="assets/paint_bg.png" class="paint-bg" alt="Background" />
+    
+    <div class="choose-content">
+      <!-- Text and hourglass row -->
+      <div class="text-hourglass">
+        <p class="choose-text">Your time ends in................</p>
+        <!-- INSERT hourglass.gif HERE (96px × 96px) -->
+        <img src="assets/hourglass.gif" class="hourglass" alt="Hourglass" />
+      </div>
+      
+      <!-- Timer display - shows countdown -->
+      <div id="countdown">00:00</div>
+      
+      <!-- Controls row: icons as buttons, no visible box -->
+<div class="icon-controls-row">
+  <button class="icon-btn" onclick="restartTimer()" title="Restart">
+    <img src="assets/restart.png" alt="Restart" />
+  </button>
+  <button class="icon-btn" onclick="pauseTimer()" title="Pause">
+    <img src="assets/pause.png" alt="Pause" />
+  </button>
+  <button class="icon-btn" onclick="stopTimer()" title="Stop">
+    <img src="assets/stop.png" alt="Stop" />
+  </button>
+</div>
+<!-- Labels row, directly below the icons -->
+<div class="icon-labels-row">
+  <span>Restart</span>
+  <span>Pause</span>
+  <span>Stop</span>
+</div>      
+      <!-- Girl full body image at bottom right - positioned to avoid button overlap -->
+      <!-- INSERT girl_full.png HERE (172px × 255px) -->
+      <img src="assets/girl_full.png" class="girl-full" alt="Girl Full Body" />
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

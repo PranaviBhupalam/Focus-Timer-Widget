@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=463, initial-scale=1.0"/>
+  <title>Select Time</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="widget">
+    <!-- Title at top left -->
+    <h1 class="title">focus timer &lt;3</h1>
+    
+    <!-- Paint background - INSERT paint_bg.png HERE -->
+    <img src="assets/paint_bg.png" class="paint-bg" alt="Background" />
+    
+    <div class="choose-content">
+      <!-- Text and hourglass row at top -->
+      <div class="text-hourglass">
+        <p class="choose-text">Choose your grind sesh</p>
+        <!-- INSERT hourglass.gif HERE (96px × 96px) -->
+        <img src="assets/hourglass.gif" class="hourglass" alt="Hourglass" />
+      </div>
+      
+      <!-- Time selection table with large numbers -->
+      <table class="time-table">
+        <tr>
+          <td onclick="goToTimer(10)">10</td>
+          <td onclick="goToTimer(30)">30</td>
+        </tr>
+        <tr>
+          <td onclick="goToTimer(40)">40</td>
+          <td onclick="goToTimer(60)">60</td>
+        </tr>
+      </table>
+      
+      <!-- Girl full body image at bottom right - INSERT girl_full.png HERE (172px × 255px) -->
+      <img src="assets/girl_full.png" class="girl-full" alt="Girl Full Body" />
+    </div>
+  </div>
+  
+  <script>
+    // Store selected time and navigate to timer page
+    function goToTimer(mins) {
+      localStorage.setItem("focusTime", mins);
+      window.location.href = "timer.html";
+    }
+  </script>
+</body>
+</html>

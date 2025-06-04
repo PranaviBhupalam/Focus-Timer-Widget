@@ -1,0 +1,279 @@
+/* Reset and base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  font-family: 'Pixelify Sans', 'Arial', sans-serif;
+}
+
+/* Widget container: exact dimensions as per your specs */
+.widget {
+  width: 463px; /* Widget width */
+  height: 489px; /* Widget height */
+  background: #F69ACD; /* Pink background */
+  border-radius: 5px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Title styling - top left corner */
+.title {
+  color: #fff;
+  font-size: 26px; /* Corrected font size */
+  font-family: 'Pixelify Sans', cursive;
+  font-weight: 400;
+  text-align: left;
+  margin: 20px 0 0 25px; /* Top left positioning */
+  letter-spacing: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* Paint background image: positioned with equal distance from sides and bottom, more space at top */
+.paint-bg {
+  position: absolute;
+  top: 70px; /* More space at top for title */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 433px; /* Paint background width */
+  height: 402px; /* Paint background height */
+  z-index: 1;
+}
+
+/* CENTER CONTENT FOR PAGE 1 (Landing page) */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%); /* Center on paint background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+/* Girl torso image for landing page - INSERT girl_torso.png HERE */
+.girl-torso {
+  width: 158px; /* Corrected width */
+  height: 159px; /* Corrected height */
+  margin-bottom: 20px;
+}
+
+/* Start button styling */
+.start-button {
+  width: 120px;
+  height: 40px;
+  background: #F7C5E0; /* Button background color */
+  color: #FF53B2; /* Button text color */
+  font-family: 'Pixelify Sans', cursive;
+  font-size: 15px; /* Corrected font size */
+  border: 2px solid #FF53B2; /* Thin border */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Drop shadow effect */
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 20px;
+}
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* SHARED CONTENT FOR PAGES 2 & 3 */
+.choose-content {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 463px;
+  height: 402px;
+  z-index: 2;
+}
+
+/* Girl full body image for pages 2&3 - INSERT girl_full.png HERE */
+.girl-full {
+  position: absolute;
+  right: 15px; /* Bottom right positioning */
+  bottom: 27px; /* Bottom positioning */
+  width: 172px; /* Corrected width */
+  height: 255px; /* Corrected height */
+  z-index: 3;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)); /* Drop shadow effect */
+}
+
+/* Text and hourglass container */
+.text-hourglass {
+  position: absolute;
+  top: 60px;
+  left: 95px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 4;
+}
+
+/* Choose/Timer text styling */
+.choose-text {
+  color: #fff; /* White color */
+  font-size: 20px; /* Corrected font size */
+  font-family: 'Pixelify Sans', cursive;
+  font-weight: 400;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Hourglass gif styling - INSERT hourglass.gif HERE */
+.hourglass {
+  width: 40px; /* Corrected width */
+  height: 48px; /* Corrected height */
+  animation: flip 4s ease-in-out infinite; /* Flipping animation */
+}
+
+/* Hourglass flip animation */
+@keyframes flip {
+  0%, 45% { transform: rotateY(0deg); }
+  50%, 95% { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* TIME TABLE FOR PAGE 2 */
+.time-table {
+  position: absolute;
+  top: 80px;
+  left: 60px;
+  border-spacing: 15px;
+  z-index: 4;
+}
+.time-table td {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  color: #FF53B2; /* Numbers color */
+  font-size: 75px; /* Corrected font size */
+  font-family: 'Pixelify Sans', cursive;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  vertical-align: middle;
+  line-height: 100px;
+}
+.time-table td:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #FF53B2;
+}
+
+/* TIMER DISPLAY FOR PAGE 3 */
+#countdown {
+  position: absolute;
+  top: 115px;
+  left: 85px;
+  font-family: 'Pixelify Sans', monospace;
+  color: #FF53B2; /* Timer color */
+  font-size: 80px; /* Large timer display */
+  font-weight: 400;
+  letter-spacing: 4px;
+  z-index: 4;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Controls row: centers the three icons horizontally, positioned to avoid girl overlap */
+.icon-controls-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px; /* Slightly reduced gap for better spacing */
+  position: absolute; /* Changed from relative to absolute */
+  left: 50px; /* Move buttons to the left to avoid girl overlap */
+  right: auto; /* Remove right: 0 */
+  top: 240px; /* Keep vertical position */
+  width: 280px; /* Set specific width for button container */
+  z-index: 10;
+}
+
+/* Each icon button: invisible background, no border, just the image */
+.icon-btn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s;
+}
+
+/* Icon image: 50x50px, drop shadow, smooth hover effect */
+.icon-btn img {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25)); /* Soft shadow */
+  transition: filter 0.2s, transform 0.15s;
+}
+
+/* On hover: slightly lift and brighten the icon */
+.icon-btn:hover img,
+.icon-btn:focus img {
+  filter: drop-shadow(0 6px 10px rgba(255,83,178,0.32)) brightness(1.15);
+  transform: translateY(-4px) scale(1.07);
+}
+
+/* Labels row: centers labels under each icon, positioned to match buttons */
+.icon-labels-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px; /* Match icon gap */
+  position: absolute;
+  left: 50px; /* Match button positioning */
+  right: auto; /* Remove right: 0 */
+  top: 285px; /* Just below the icons */
+  width: 280px; /* Match button container width */
+  z-index: 10;
+}
+.icon-labels-row span {
+  display: block;
+  width: 50px;
+  text-align: center;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  user-select: none;
+}
+
+/* Ensure girl image stays in bottom right without interfering with buttons */
+.girl-full {
+  position: absolute;
+  right: 15px; /* Bottom right positioning */
+  bottom: 27px; /* Bottom positioning */
+  width: 172px; /* Corrected width */
+  height: 255px; /* Corrected height */
+  z-index: 5; /* Reduced z-index so buttons appear above if needed */
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)); /* Drop shadow effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .widget {
+    width: 98vw;
+    max-width: 463px;
+    height: auto;
+    min-height: 489px;
+  }
+}
